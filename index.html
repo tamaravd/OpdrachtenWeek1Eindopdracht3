@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Guess the Number spel    </h1>
+    <hr size="3">
+    <p>Welkom bij dit spannende spel om het getal van de computer te raden.</p><br>
+
+    <button type="submit" id="startSpel">Klik hier om het spel te starten.</button>
+
+
+    <script >
+      
+    document.getElementById("startSpel").onclick = () => {
+        let welkomNaam = prompt("Welkom wat is je naam?");
+        
+
+        //const welkom = () => {
+        let userNumber = parseInt(prompt("Hey " + welkomNaam + ". Raad het getal tussen 1 en 25. Je hebt 5 pogingen."));
+    //}
+    //welkom();
+        
+        let RandomNumber = Math.floor(Math.random() * 25) + 1;
+        let Attempts = 5;
+
+        
+    for (i=1; i <= Attempts; i++){
+
+
+
+        console.log("userNumber" + userNumber);
+        console.log("RandomNumber" + RandomNumber);
+
+        if (userNumber == RandomNumber) {
+            alert("Je hebt het goed geraden "+ welkomNaam + "! Tot de volgende keer!");
+            return;
+        } else if (userNumber !== RandomNumber && i< Attempts){
+            userNumber = prompt("Helaas, je hebt nog " + (Attempts - i) + " pogingen.");
+
+        } else if (userNumber !== RandomNumber && i === Attempts){
+            alert("Helaas, het spel is afgelopen, je hebt geen pogingen meer.");
+            return;
+        }
+    }
+    }
+    
+    
+  
+    
+  
+    </script>
+</body>
+</html>
